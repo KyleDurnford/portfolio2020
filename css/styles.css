@@ -1,6 +1,11 @@
-h1, h2, h3, p {
+html {
+    min-width: 350px;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p, input, textarea {
     font-family: 'adelle-sans', sans-serif;
-    font-size: 24px;
+    font-size: 2rem;
 }
 
 a {
@@ -9,46 +14,22 @@ a {
     transition: color .2s ease;
 }
 
-.links .active {
+nav a:hover {
     color: #FC00FF;
 }
 
-.links a {
-    font-size: 2.5rem;
-    color: #000;
+nav {
+    max-height: min-content;
 }
 
-.links li:nth-of-type(1) a:hover, .social-links li:nth-of-type(1) a:hover {
-    color: #FC00FF;
-}
-
-.links li:nth-of-type(2) a:hover, .social-links li:nth-of-type(2) a:hover {
-    color: rgba(0,195,255,1);
-}
-
-.links li:nth-of-type(3) a:hover, .social-links li:nth-of-type(3) a:hover {
-    color: rgba(56,239,125,1);
-}
-
-.links li:nth-of-type(4) a:hover, .social-links li:nth-of-type(4) a:hover {
-    color: #FFFF1C
-}
-
-.links {
-    text-align: right;
-    margin-bottom: 2rem;
-}
-
-.social-links a {
-    font-family: "Roboto", sans-serif;
+nav a {
     font-size: 1.5rem;
     color: #000;
-    line-height: 2;
+    margin-left: 1rem;
 }
 
-.social-links li {
-    display: inline;
-    margin-right: 1.5rem;
+.home {
+    color: black;
 }
 
 .cta-btn {
@@ -67,7 +48,7 @@ a {
     background-color: #eee;
 }
 
-.cta-btn::before {
+.cta-btn:before {
     content: '';
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
@@ -82,43 +63,24 @@ a {
 }
 
 header {
-    padding: 1.2rem 10%;
+    padding: 1.2rem 5%;
     margin-bottom: 10rem;
-}
-
-.menu-icon {
-    width: 24px;
-}
-
-.menu-icon:hover {
-    cursor: pointer;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.nav {
-    position: absolute;
-    width: 100%;
-    background-color: #fff;
-    top: -100%;
-    left: 0;
-    z-index: 10;
-    transition: top .5s ease;
-    padding: 1.5rem 10%;
-    border-bottom: 10px solid #000;
-}
-
-.show {
-    top: 0;
+.navbar a {
+    color: black;
 }
 
 .cta {
     max-width: 14ch;
     font-size: calc(2rem + 3vw);
-    margin-top: 10rem;
+    margin-top: 7rem;
     margin-bottom: 2.3rem;
     line-height: 1.2;
 }
@@ -126,8 +88,8 @@ header {
 .circles {
     position: absolute;
     width: 80%;
-    height:100%;
-    top: 0;
+    height: 100%;
+    top: 3rem;
     right: 0;
     z-index: -10;
 }
@@ -136,8 +98,7 @@ header {
     position: absolute;
     top: 7rem;
     right: 10rem;
-    height: 35rem;
-    width: 35rem;
+    width: 60%;
     border-radius: 100%;
     background: rgb(0,195,255);
     background: linear-gradient(133deg, rgba(0,195,255,1) 0%, rgba(56,239,125,1) 100%);
@@ -148,8 +109,7 @@ header {
     position: absolute;
     top: 30rem;
     right: 4rem;
-    height: 17rem;
-    width: 17rem;
+    width: 30%;
     border-radius: 100%;
     background: #FFFF1C;
     background: linear-gradient(60deg, #FFFF1C 0%, #FC00FF 100%);
@@ -159,10 +119,9 @@ header {
 
 .yellow-blue {
     position: absolute;
-    top: 30rem;
-    right: 35rem;
-    height: 15rem;
-    width: 15rem;
+    top: 25rem;
+    right: 20rem;
+    width: 25%;
     border-radius: 100%;
     background: rgba(56,239,125,1);
     background: linear-gradient(133deg, #FFFF1C 0%, rgb(0,195,255) 100%);
@@ -175,13 +134,18 @@ header {
     position: absolute;
     top: 6rem;
     right: 4rem;
-    height: 7rem;
-    width: 7rem;
+    width: 15%;
     border-radius: 100%;
     background: #FC00FF;
     background: linear-gradient(133deg, rgba(0,195,255,1) 0%, #FC00FF 100%);
     animation: circle-float 20s ease-out infinite;
     animation-delay: 4s;
+}
+
+.circle:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
 
 @keyframes circle-float {
@@ -205,24 +169,31 @@ header {
 .skills {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .left, .right {
     width: 100%;
 }
 
+.right svg {
+    width: 100%;
+    height: 20rem;
+}
+
 .icon {
-    width: 48px;
+    width: 40px;
     height: 48px;
-    background-color: #eee;
     border-radius: 100%;
-    padding: 12px;
+    margin-top: 12px;
 }
 
 .skills-info li {
     width: 100%;
-    display: flex;
     margin-bottom: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .info {
@@ -231,11 +202,25 @@ header {
 
 .info a {
     margin-left: auto;
+    color: black;
+}
+
+.info a:hover {
+    color: #FC00FF;
+}
+
+section {
+    margin-top: 5rem;
+}
+
+main {
+    margin: 0 10%;
+    max-width: 1920px;
 }
 
 main h1 {
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 main h2 {
@@ -243,12 +228,197 @@ main h2 {
     margin-bottom: 1rem;
 }
 
-main p {
+main p, li {
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.8);
     font-family: "Roboto", sans-serif;
-    width: 40ch;
+    max-width: 40ch;
     margin-bottom: .5rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 35px;
+}
+
+.gallery h3 {
+    color: black;
+}
+
+.box {
+    width: 90%;
+    height: 400px;
+    max-width: 400px;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0rem 5rem;
+    border: 5px solid black;
+    transition: border .2s ease;
+}
+
+.box:hover {
+    border: 2px solid black;
+}
+
+.overflow {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.box:before {
+    position: absolute;
+    z-index: -1;
+    top: 2rem;
+    left: 2rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,195,255,1), #FC00FF, #FFFF1C, rgba(56,239,125,1));
+    background-size: 400% 400%;
+    animation: CardGradient 20s ease infinite;
+    content: "";
+}
+
+.box-0 {
+    background: url("../img/swiper.jpg") center/cover no-repeat;
+}
+
+.box-1 {
+    background: url("../img/omt-full.jpg") center/cover no-repeat;
+}
+
+.box-2 {
+    background: url("../img/50snakelogo.jpg") center/cover no-repeat;
+}
+
+
+.preview {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.card-info {
+    position: absolute;
+    z-index: 11;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #fff;
+    width: 100%;
+}
+
+.block-btn {
+    background: #000;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: background 1s ease, color 1s ease;
+}
+
+.block-btn:hover {
+    background: rgb(0, 195, 255);
+    color: #000;
+}
+
+@keyframes CardGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.contact .right {
+    background: linear-gradient(to top, rgba(0,195,255,0.5), rgba(251, 0, 255, 0.5)),
+                linear-gradient(to right, rgba(255, 255, 28, 0.493), rgba(56, 239, 126, 0.479));
+    content: "";
+    display: none;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+.contact .left {
+    padding-right: 2rem;
+}
+
+.left form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.left form > input, .left form > textarea {
+    margin: .5rem;
+}
+
+.left form > input[type="email"] {
+    flex: 3;
+}
+
+.left textarea {
+    border: 2px solid #000;
+    width: 100%;
+    font-size: 16px;
+    padding: .5rem;
+}
+
+.left input {
+    font-size: 20px;
+    padding: .5rem;
+    border: 2px solid black;
+}
+
+input[type="submit"] {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background 1s ease, color 1s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background: rgba(0,195,255,1);
+    color: #000;
+}
+
+footer {
+    color: #fff;
+    background-color: #000;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer svg {
+    height: 14px;
+    margin-left: .3rem;
+}
+
+.bio {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.underline {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,195,255,1), #FC00FF, #FFFF1C, rgba(56,239,125,1));
+    margin-bottom: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -256,8 +426,233 @@ main p {
         width: 50%;
     }
 
+    header {
+        padding: 1.2rem 10%;
+    }
+
+    .nav {
+        padding: 1.5rem 10%;
+    }
+
     main {
         width: 80%;
         margin: 0 auto;
+    }
+
+    .circles {
+        width: 40rem;
+        margin: 0 10% 0 0;
+    }
+
+    .blue-green {
+        right: 5rem;
+    }
+
+    .yellow-pink {
+        top: 25rem;
+    }
+
+    .right svg {
+        width: 100%;
+        height: 40rem;
+        padding: 10%;
+    }
+
+    .box {
+        height: 500px;
+        max-width: 500px;
+    }
+
+    .contact .right {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .circles {
+        width: 60rem;
+        margin: 0 10% 0 0;
+    }
+
+    .yellow-blue {
+        right: 35rem;
+        top: 25rem;
+    }
+
+    .blue-green {
+        right: 5rem;
+        top: 1rem;
+    }
+
+    .yellow-pink {
+        top: 25rem;
+    }
+
+    .box {
+        width: 25%;
+    }
+
+    .gallery {
+        justify-content: space-between;
+    }
+
+    .contact .right {
+        display: block;
+    }
+}
+
+.work-top {
+    margin-bottom: 0;
+}
+
+.work-header {
+    background: linear-gradient(to top, rgba(0,195,255,0.5), rgba(251, 0, 255, 0.5)),
+                linear-gradient(to right, rgba(255, 255, 28, 0.493), rgba(56, 239, 126, 0.479));
+    text-align: center;
+    height: 30rem;
+    padding-top: 11rem;
+    margin-top: 3rem;
+    border-radius: 2rem;
+}
+
+.work-header h1 {
+    background-color: white;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    font-size: calc(2rem + .5vw);
+    display: inline-block;
+}
+
+.work {
+    border-radius: 2rem;
+    background-color: #eee;
+    padding-bottom: .3rem;
+}
+
+.work-title {
+    border-radius: 2rem 2rem 0 0;
+    padding: 1.5rem;
+}
+
+.wd-title-1 {
+    background: url('../img/realestate-full.jpg') center/cover no-repeat;
+}
+
+.wd-title-2 {
+    background: url('../img/omt-full.jpg') center/cover no-repeat;
+}
+
+.ui-title-1 {
+    background: url('../img/recipe-head.jpg') center/cover no-repeat;
+}
+
+.gd-title-1 {
+    background: url('../img/50snake-full.jpg') top/cover no-repeat;
+}
+
+.work h3 {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.work-description {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.desc {
+    border-right: 2px solid #ddd;
+    max-width: 100%;
+    min-width: 50%;
+    padding-right: 1rem;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 2rem;
+    max-width: 100%;
+    min-width: 50%;
+}
+
+.table div {
+    padding: .5rem 0;
+}
+
+.platform {
+    border-top: 2px solid #ddd;
+}
+
+.table ul {
+    margin-left: 1rem;
+    list-style-type: disc;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 3.5rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: rgb(53, 53, 53);
+}
+
+.work-2 {
+    margin-top: 3rem;
+}
+
+.work-image {
+    height: 40rem;
+    background-color: #fff;
+    margin: 1.5rem;
+    border-radius: 1rem;
+}
+
+.img-1 {
+    background: url('../img/realestate-full.jpg') center/cover no-repeat;
+}
+
+.img-2 {
+    background: url('../img/omt-full.jpg') center/cover no-repeat;
+}
+
+.img-3 {
+    background: url('../img/recipe-head.jpg') top/cover no-repeat;
+}
+
+.img-4 {
+    background: url('../img/50snake-full.jpg') center/cover no-repeat;
+}
+
+@media only screen and (max-width: 900px) {
+    .work-description {
+        flex-direction: column;
+    }
+
+    .desc {
+        border: none;
+    }
+
+    .table {
+        margin-left: 0;
+    }
+
+    .table ul {
+        height: unset;
+    }
+
+    .contact .left {
+        padding-right: 1.2rem;
+    }
+
+    .left form {
+        display: block;
     }
 }
